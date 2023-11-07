@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="blue" >
+   <ion-buttons slot="start">
+    <ion-back-button></ion-back-button>
+   </ion-buttons>
+    <ion-title>Lista de Grabacion</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/recording-studios">
+       <ion-icon name="add" ></ion-icon>
+      </ion-button>
+   </ion-buttons>
+        
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngFor="let recording of recordingList | async" routerLink="/detail-recording/{{recording.id}}">
+    <ion-card-header >
+      <ion-card-title>{{ recording.nameRedording }}</ion-card-title>
+      <ion-card-subtitle>Tipo de melodia: {{ recording.type_of_melody }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      Numero de cabina: {{ recording.number_of_cabins }}
+    </ion-card-content>
+  </ion-card>
+</ion-content>

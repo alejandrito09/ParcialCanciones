@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="blue">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ (song | async)?.songName }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-content>
+      <ion-card-subtitle>Artista</ion-card-subtitle>
+      <p>Cancion{{ (song | async)?.songName }} Lanzado por: {{ (song | async)?.artistName }}.</p>
+      <br>
+      <ion-card-subtitle>Album</ion-card-subtitle>
+      <p>Parte de la cancion  {{ (song | async)?.albumName }} album.</p>
+      <br>
+      <ion-card-subtitle>Descricion</ion-card-subtitle>
+      <p>{{ (song | async)?.songDescription }}</p>
+    </ion-card-content>
+  </ion-card>
+  <ion-button expand="block" (click)="deleteSong()" color="blue"> BORRAR</ion-button>
+  <ion-button expand="block" routerLink="/update/{{songId}}" color="blue"> ACTUALIZAR</ion-button>
+</ion-content>

@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="blue">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Estudio de grabacion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="recordingForm" (submit)="createRecording()">
+    <ion-item>
+      <ion-label stacked>Nombre de grabacion:</ion-label>
+      <ion-input formControlName="nameRecording" type="text" placeholder="Cual es el nombre"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>tipo de melodia:</ion-label>
+      <ion-input formControlName="type_of_melody" type="text" placeholder="Cual es la melodia?"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Numero de cabina:</ion-label>
+      <ion-input formControlName="number_of_cabins" type="text" placeholder="Cual es la cabina?"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Dueño:</ion-label>
+      <ion-input formControlName="Owner" type="text" placeholder="Quien es el dueño?"></ion-input>
+    </ion-item>
+    <ion-button expand="block" type="submit" [disabled]="!recordingForm.valid" color="blue"> Añadir Grabacion</ion-button>
+  </form>
+</ion-content>

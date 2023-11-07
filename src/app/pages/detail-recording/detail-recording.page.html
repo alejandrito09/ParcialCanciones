@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="blue">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ (recording | async)?.recordingName }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-content>
+      <ion-card-subtitle> Nombre Grabacion: </ion-card-subtitle>
+      <p>{{ (recording | async)?.nameRecording }} </p>
+      <br>
+      <ion-card-subtitle>Tipo de melodia: </ion-card-subtitle>
+      <p>  {{ (recording | async)?.type_of_melody }}</p>
+      <br>
+      <ion-card-subtitle>Numero de cabinas: </ion-card-subtitle>
+      <p>{{ (recording | async)?.number_of_cabins }}</p>
+    </ion-card-content>
+  </ion-card>
+  <ion-button expand="block" (click)="deleteRecording()" color="blue"> Borrar grabacion</ion-button>
+  <ion-button expand="block" routerLink="/update-recording/{{recordingId}}" color="blue"> actualizar</ion-button>
+</ion-content>

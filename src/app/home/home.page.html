@@ -1,0 +1,36 @@
+<ion-header >
+  <ion-toolbar color="blue">
+    <ion-item-group>
+      <ion-item color="blue">
+          <ion-title>
+              SpotyPobre
+          </ion-title>
+      </ion-item>
+      <ion-item>
+          <ion-buttons>
+            <ion-button routerLink="/create">
+              <ion-icon slot="icon-only" name="add" color="blue"></ion-icon>
+            </ion-button>
+            <ion-button routerLink="/cantantes">
+              <ion-icon slot="icon-only" name="people-outline" color="blue"></ion-icon>
+            </ion-button>
+            <ion-button routerLink="/recording-list">
+              <ion-icon slot="icon-only" name="videocam-outline" color="blue"></ion-icon>
+            </ion-button>
+            <ion-button routerLink="/images">
+              <ion-icon slot="icon-only" name="images-outline" color="blue"></ion-icon>
+            </ion-button>
+          </ion-buttons> 
+      </ion-item> 
+    </ion-item-group>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngFor="let song of songList | async" routerLink="/detail/{{song.id}}">
+    <ion-card-header >
+      <ion-card-title>{{ song.songName }}</ion-card-title>
+      <ion-card-subtitle>Nombre artista: {{ song.artistName }}</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+</ion-content>
